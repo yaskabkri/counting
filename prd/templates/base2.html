@@ -1,0 +1,59 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your News Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mycss.css' %}">
+</head>
+<body>
+
+<header>
+    <form method="get" action="{% url 'search_view' %}">
+        <input type="text" name="q" placeholder="Search..." class="wide-input">
+        <button type="submit">Search</button>
+    </form>
+</header>
+
+<nav>
+    <a href="{% url 'add_sale' %}">بيع</a>
+    <!-- Add your navigation links here -->
+</nav>
+
+<!-- Second navigation bar -->
+<nav id="second-nav">
+    <!-- Add your second navigation links here -->
+</nav>
+
+<nav id="third">
+    <!-- Add your third navigation links here -->
+</nav>
+
+{% block content %}{% endblock %}
+
+<section>
+    <!-- Main content area -->
+    <h2></h2>
+    <!-- Add your news articles or content here -->
+</section>
+
+<section>
+    <!-- Featured stories or additional content -->
+    <!-- Add more content here -->
+</section>
+
+<!-- League section (placeholder) -->
+<section id="league-section">
+    <h2></h2>
+    <!-- Add content related to sports league -->
+</section>
+
+<footer>
+    <p>&copy; 2024 NADA_bkri-LMTD. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

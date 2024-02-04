@@ -1,0 +1,82 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your News Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/mycss.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+<header>
+    <form method="get" action="{% url 'search_view' %}">
+        <input type="text" name="q" placeholder="Search..." class="wide-input">
+        <button type="submit">Search</button>
+    </form>
+</header>
+
+<nav>
+    <a href="{% url 'add_sale' %}"><i class="fas fa-shopping-cart"></i> بيع</a>
+    <a href="{% url 'add_p' %}"><i class="fas fa-plus-circle"></i> اضف منتج</a>
+    
+    <a href="{% url 'plot_cumulative_sales' %}"><i class="fas fa-chart-line"></i> استعراض</a>
+    <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> تسجيل دخول</a>
+    <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> تسجيل خروج</a>
+    <a href="{% url 'add_cat' %}"><i class="fas fa-flask"></i> اضف عينة</a>
+    <a href="{% url 'list_sale' %}"><i class="fas fa-list"></i> المبيعات</a>
+    <a href="{% url 'boss_ex' %}"><i class="fas fa-plus-square"></i> اضافة خرجيات المدير</a>
+    <a href="{% url 'boss_list' %}"><i class="fas fa-list-alt"></i> خرجيات المدير</a>
+    <a href="{% url 'date_sale' %}"><i class="far fa-calendar-alt"></i> المبيعات باليوم</a>
+    
+    <a href="{% url 'register' %}"><i class="fas fa-user-plus"></i> اشتراك</a>
+</nav>
+    
+<!-- Second navigation bar -->
+<nav id="second-nav">
+    <a href="{% url 'credit_list' %}"><i class="fas fa-money-check-alt"></i> ديون الزباين</a>
+    <a href="{% url 'list_staff' %}"><i class="fas fa-list-ul"></i> قايمة العمال</a>
+    <a href="{% url 'add_staff' %}"><i class="fas fa-user-plus"></i> سجل عامل</a>
+    <a href="{% url 'create_salary' %}"><i class="fas fa-dollar-sign"></i> تحديد الرواتب</a>
+    <a href="{% url 'salary_list' %}"><i class="fas fa-money-bill"></i> رواتب العمال</a>
+    <a href="{% url 'prod_loan' %}"><i class="fas fa-exchange-alt"></i> تفاصيل المتخلصين</a>
+    <a href="{% url 'list_product' %}"><i class="fas fa-list-alt"></i> تفاصيل المنتجات</a>
+    <a href="{% url 'list_staff' %}"><i class="fas fa-user-friends"></i> كشف العمال</a>
+</nav>
+
+<nav id="third">
+    <a href="{% url 'boss_ex' %}"><i class="fas fa-folder-plus"></i> اضافة خرجيات المدير</a>
+    <a href="{% url 'boss_list' %}"><i class="fas fa-list"></i> خرجيات المدير</a>
+    <a href="{% url 'home' %}"><i class="fas fa-home"></i> الرئيسية</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<section>
+    <!-- Main content area -->
+    <h2></h2>
+    <!-- Add your news articles or content here -->
+</section>
+
+<section>
+    <!-- Featured stories or additional content -->
+    <!-- Add more content here -->
+</section>
+
+<!-- League section (placeholder) -->
+<section id="league-section">
+    <h2></h2>
+    <!-- Add content related to sports league -->
+</section>
+
+<footer>
+    <p>&copy; 2024 NADA_bkri-LMTD. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
